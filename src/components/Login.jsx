@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/clientServices'; 
 
 export default function Login(){
+
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
