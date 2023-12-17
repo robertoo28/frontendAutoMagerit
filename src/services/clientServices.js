@@ -23,4 +23,18 @@ export const loginUser = async (email, password) => {
         return []; // Devuelve un array vacío en caso de error
     }
 };
+
+
+export const registrarActivo = async(name,nameActive,subCategoria,description)=>{
+  try {
+    const response = await axios.post('http://localhost:3900/api/activos/registrar',{
+      name,
+      nameActive,
+      subCategoria,
+      description
+});
+  } catch (error) {
+    
+  }
+}
   

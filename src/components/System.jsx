@@ -143,9 +143,10 @@ function System() {
   }, []);
   return (
     <div className='bg-gray-800 h-screen w-full'>
-      <div className='flex flex-col justify-center items-start p-4'>
-        <h1 className="text-white">Bienvenido al Dashboard</h1>
-        {/* Contenido del Dashboard */}
+      <div className='flex flex-col justify-center items-center  '>
+      <h1 className="text-blue-300 text-3xl lg:text-4xl font-semibold tracking-wide italic shadow-md text-center bg-clip-text text-transparent bg-gradient-to-br from-gray-300 blue-pink-300 to-teal-300 hover:from-teal-300 hover:to-purple-300 transition duration-700 ease-in-out mb-7">
+  Registro de activos de MageritDynamics
+</h1>
         <form className='max-w-[400px] w-full  bg-gray-900 p-8 px-8 rounded-lg'>
           <div className='mb-4'>
           <label className="block text-white mb-2">Primera Opción</label>
@@ -175,7 +176,6 @@ function System() {
                   {usuario.name} 
                 </option>
               ))}
-              {/* Más opciones */}
             </select>
           </div>
         </form>
