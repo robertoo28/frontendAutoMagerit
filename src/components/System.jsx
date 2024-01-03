@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {cargarUsuarios } from '../services/clientServices'; 
-function System() {
+import {cargarUsuarios } from '../services/clientServices';
+import { registrarActivo } from '../services/clientServices'; 
+const System=()=> {
     const opcionesPrimerSelector = ['[essentia]Activos esenciales', '[arch] Arquitectura del sistema','[D] Datos / Información',
 '[K] Claves criptográficas','[S] Servicios','[SW] Software','[HW] Equipamiento informático','[COM] Redes'];
     const opcionesSegundoSelector = {
@@ -131,9 +132,10 @@ function System() {
     const manejarCambioPrimero = (e) => {
       setSeleccionPrimera(e.target.value);
       setSeleccionSegunda(''); // Resetea la selección del segundo selector
-      const nombreActivoActualizado = seleccionPrimera
     };
     const [usuarios, setUsuarios] = useState([]);
+    const [subCategoria, setSubCategoria] = useState('');
+
 
   useEffect(() => {
     const obtenerUsuarios = async () => {
@@ -147,17 +149,22 @@ function System() {
   const [description, setDescription] = useState('');
 
   const handleSubmit = async (e) => {
-    setNameActive = nombreActivoActualizado
     e.preventDefault(); // Prevenir recarga de la página
     try {
-
-      await registrarActivo(name, nameActive, seleccionSegunda, description);
-      console.log('Activo registrado')
+      setNameActive(seleccionPrimera);
+      setSubCategoria(seleccionSegunda);
+  
+      const respuesta = await registrarActivo(name, nameActive, subCategoria, description);
+      console.log(respuesta, name,nameActive,subCategoria,description)
+      console.log('Respuesta del servidor:', respuesta);
+      
       // Manejo post-envío: limpiar formulario, mostrar mensaje de éxito, etc.
     } catch (error) {
       // Manejar el error
     }
-  };
+  
+  }
+  console.log(name,nameActive,subCategoria,description);
   return (
     
     <div className='bg-gray-800 min-h-screen w-full'>
@@ -263,7 +270,9 @@ function System() {
         </div>
       </div>
     </div>
+    
   );
+  
 }
 
 export default System;
