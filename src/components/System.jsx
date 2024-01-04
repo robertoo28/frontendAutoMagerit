@@ -3,7 +3,7 @@ import {cargarUsuarios } from '../services/clientServices';
 import { registrarActivo } from '../services/clientServices'; 
 const System=()=> {
     const opcionesPrimerSelector = ['[essentia]Activos esenciales', '[arch] Arquitectura del sistema','[D] Datos / Información',
-'[K] Claves criptográficas','[S] Servicios','[SW] Software','[HW] Equipamiento informático','[COM] Redes'];
+'[K] Claves criptográficas','[S] Servicios','[SW] Software','[HW] Equipamiento informático','[COM] Redes','[Media] Soportes de información', '[L]Instalaciones','[P]Personal']  ;
     const opcionesSegundoSelector = {
 
         '[essentia]Activos esenciales': [      '[info] información',
@@ -119,9 +119,27 @@ const System=()=> {
         '[MAN] red metropolitana',
         '[Internet] Internet',
         ],
-        'prueba':[],
-        'prueba':[],
-        'prueba':[],
+        '[Media] Soportes de información':[],
+        '[L]Instalaciones':['[site] recinto',
+        '[building] edificio',
+        '[local] cuarto',
+        '[mobile] plataformas móviles',
+        '[car] vehículo terrestre: coche, camión, etc.',
+        '[plane] vehículo aéreo: avión, etc.',
+        '[ship] vehículo marítimo: buque, lancha, etc.',
+        '[shelter] contenedores',
+        '[channel] canalización',
+        '[backup] instalaciones de respaldo'],
+        '[P]Personal':['[ue] usuarios externos',
+        '[ui] usuarios internos',
+        '[op] operadores',
+        '[adm] administradores de sistemas',
+        '[com] administradores de comunicaciones',
+        '[dba] administradores de BBDD',
+        '[sec] administradores de seguridad',
+        '[des] desarrolladores / programadores',
+        '[sub] subcontratas',
+        '[prov] proveedores'],
         
     };
   
